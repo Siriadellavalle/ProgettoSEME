@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuto</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #e6e6fa; /* Sfondo lilla pastello */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #4b0082; /* Testo viola scuro per contrasto */
+            overflow: hidden;
+        }
+        .welcome-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 60px 80px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .welcome-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
+            background-size: 20px 20px;
+            animation: moveBackground 10s linear infinite;
+            z-index: -1;
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
+            font-weight: 600;
+            color: #6a5acd; /* Colore lilla scuro per il titolo */
+            font-family: 'Dancing Script', cursive; /* Font estetico */
+        }
+        p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            animation: slideIn 1.2s ease-out;
+            color: #483d8b; /* Colore viola scuro per il testo */
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            color: #fff;
+            background-color: #9370db; /* Colore lilla per il pulsante */
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeIn 2s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 10.01%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease;
+        }
+        .btn:hover {
+            background-color: #7b68ee; /* Colore lilla più scuro al passaggio del mouse */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .qr-code {
+            margin-top: 30px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        .qr-code img {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes moveBackground {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> <!-- Font estetico -->
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Benvenuto!</h1>
+        <p>Grazie per aver visitato la mia pagina, sono felice di averti qui. Un bacio da Siria!</p>
+        <a href="#" class="btn">Scopri di più</a>
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.example.com/risoluzione.html" alt="QR Code">
+        </div>
+    </div>
+</body>
+</html>
